@@ -5,6 +5,8 @@ let btnDesencriptar = document.getElementById("btnDesencriptar");
 let btnCopiar = document.getElementById("btnCopiar");
 let texto = document.getElementById("areaTexto");
 let lectura = document.getElementById("areaLectura");
+let divImagen = document.getElementById("imagen-sin-busqueda");
+let divEncriptadora = document.getElementById("area-encriptadora")
 
 texto.value = ""
 lectura.value = ""
@@ -36,6 +38,10 @@ function encriptar() {
             textoEncriptado = textoEncriptado + letra;
         }
     }
+
+    mostrarBoton(btnCopiar);
+    mostrarAreaEncriptadora(divImagen, divEncriptadora);
+
     lectura.value = textoEncriptado;
 }
 
@@ -46,7 +52,19 @@ function desencriptar() {
         textoEncriptado = textoEncriptado.replace(encriptado[i], vocales[i]);
     }
 
+    mostrarBoton(btnCopiar);
+    mostrarAreaEncriptadora(divImagen, divEncriptadora);
+
     lectura.value = textoEncriptado;    
+}
+
+function mostrarBoton(boton) {
+    boton.className = 'btn btn-claro';
+}
+
+function mostrarAreaEncriptadora(divMunheco, divEncriptadora) {
+    divMunheco.className = "desaparecer-munheco";
+    divEncriptadora.className = "si-info";
 }
 
 function copiar() {

@@ -1,21 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador Web</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Montserrat:wght@300&display=swap');
+    </style>
+    <link rel="shortcut icon" href="src/logo.png">
+    <title>Encriptador</title>
 </head>
 <body>
-    <h1>Texto</h1>
-    <textarea name="areaTexto" id="areaTexto" cols="30" rows="10"></textarea>
-    <button id="btnEncriptar">Encriptar</button>
-    <button id="btnDesencriptar">Desencriptar</button>
-    <h1>Lectura</h1>
-    <textarea name="areaLectura" id="areaLectura" cols="30" rows="10" readonly></textarea>
-    <button id="btnCopiar">Copiar</button>
 
-    <footer>Desarrollado por Daniel Calderón</footer>
-    <script src="app.js"></script>
+    
+    <main class="container">
+        <section class="area-texto">
+            <textarea name="areaTexto" id="areaTexto" cols="0" rows="0" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="botones">
+                <button id="btnEncriptar" class="btn btn-oscuro">Encriptar</button>
+                <button id="btnDesencriptar" class="btn btn-claro">Desencriptar</button>
+            </div>            
+        </section>
+        <section class="area-lectura">
+            <div class="munheco" id="imagen-sin-busqueda">
+                <img src="src/munheco.png" alt="Persona buscando algo" srcset="">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            <div class="no-info" id="area-encriptadora">
+                <textarea name="areaLectura" id="areaLectura" cols="0" rows="0" readonly></textarea>
+                <div class="botones">
+                    <button id="btnCopiar" class="btn btn-desaparecido">Copiar</button> 
+                </div>
+            </div>            
+        </section>
+    </main>    
+
+    <footer>
+        &copy Creado por Daniel Calderón - OC0098 GitHub
+    </footer>
+    <script src="javascript/app.js"></script>
 </body>
 </html>
